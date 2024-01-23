@@ -9,7 +9,7 @@ import StatsLogo from '../OrangeStats.svg';
 
 const HomePage = () => {
   return (
-    <div>
+    <div className='page-content'>
     <div className='HeaderContainer'>
       <div className="HeaderText">
         <div>

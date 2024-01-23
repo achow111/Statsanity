@@ -5,7 +5,7 @@ import OrangeLine from '../OrangeLine.svg';
 const Stats = () => {
   
   return (
-    <div>
+    <div className='page-content'>
       <h1 className="Main Heading">
       Statsanity is your reference for basketball stats,
       player profiles, team rosters, game scores 

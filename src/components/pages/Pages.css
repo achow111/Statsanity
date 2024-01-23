@@ -8,12 +8,18 @@
   margin-bottom: 20px;
   margin-left: 16%;
   position: relative;
+  overflow: hidden;
+}
+
+.page-content {
+  animation: fade-in 1.5s;
 }
 
 .HeaderText {
   display: flex;
   align-items: center;
 }
+
 @keyframes bobbleRotate {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -62,7 +68,7 @@
   color: white;
   padding: 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   margin: 20px 15px;
   height: 200px;
@@ -98,9 +104,8 @@
 
 .ButtonParagraph {
   margin-left: 10px;
-  font-size: 14px; /* Adjusted font size */
+  font-size: 16px; /* Adjusted font size */
   margin-bottom: 0px 50px 0px 50px;
-  word-break: break-word;
 }
 
 .Buttons {
@@ -117,7 +122,37 @@
   margin-right: 0.5rem;
 }
 
-.fade-in {
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out; /* Add a transition for opacity */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+@media (max-width: 780px) {
+  .HeaderContainer {
+    flex-direction: column;
+    text-align: center;
+    margin-left: 16%;
+  }
+
+  .Header {
+    text-align: left;
+  }
+
+  .HeaderParagraph {
+    display: flex;
+    text-align: center;
+    color: white;
+  }
+
+  .HomePagePhoto {
+    display: none; /* Hide the photo on small screens */
+  }
+
+  .Header {
+    margin-bottom: 10px; /* Adjust spacing for better appearance on small screens */
+  }
 }

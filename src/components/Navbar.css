@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 body {
+    position: relative; /* Ensure position:relative for pseudo-elements to be positioned relative to the body */
     background: #07111e;
     margin: 0; /* Remove default margin to fill the entire viewport */
-  }
+}
 
   nav {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -131,6 +132,10 @@ nav .menu span {
 
     nav ul li a {
         margin: 0.5rem;
+    }
+
+    nav ul li a:hover {
+        transform: scale(1.01); 
     }
 }
 
