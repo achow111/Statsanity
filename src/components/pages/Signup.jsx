@@ -22,7 +22,7 @@ const Signup = () => {
   const handleEmail = (e) => {
     setEmail(e.target.value);
     setSubmitted(false);
-  };
+      };
 
   // Handling the password change
   const handlePassword = (e) => {
@@ -39,11 +39,21 @@ const Signup = () => {
   // Handling the form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name === '' || email === '' || password === '' || confirmPassword === '' || password !== confirmPassword) {
-      setError(true);
-    } else {
+
+    const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isNameValid = /^[a-zA-Z\s]+$/.test(name);
+  
+    const formIsValid =
+      name &&
+      email &&
+      password === confirmPassword &&
+      emailFormat.test(email) &&
+      isNameValid;
+  
+    setError(!formIsValid);
+  
+    if (formIsValid) {
       setSubmitted(true);
-      setError(false);
     }
   };
 
@@ -70,46 +80,46 @@ const Signup = () => {
           display: error ? '' : 'none',
         }}
       >
-        <p className='label'>Please enter all the fields correctly</p>
+        <p className='error-container'>Please enter all the fields correctly</p>
       </div>
     );
   };
 
   return (
     <div className="registration-form page-content">
-      <div className='registration-logo'>
-        <img src={TitleLogo} alt="Title Logo" style={{ marginRight: '0.5rem' }} />
-        Statsanity
-      </div>
-      <h1 className="registration-header">Sign up for free</h1>
-      <form>
-        {/* Labels and inputs for form data */}
-        <label className="label label-name">Name</label>
-        <input onChange={handleName} className="resgistration-input" value={name} type="text" />
-
-        <label className="label label-email">Email</label>
-        <input onChange={handleEmail} className="resgistration-input" value={email} type="email" />
-
-        <label className="label label-password">Password</label>
-        <input onChange={handlePassword} className="resgistration-input" value={password} type="password" />
-
-        <label className="label label-password">Confirm Password</label>
-        <input
-          onChange={handleConfirmPassword}
-          className="resgistration-input"
-          value={confirmPassword}
-          type="password"
-        />
-
-        <button onClick={handleSubmit} className="registration-btn" type="submit">
-          Create Account
-        </button>
-        <div className="messages">
-        {errorMessage()}
-        {successMessage()}
-      </div>
-      </form>
+    <div className='registration-logo'>
+      <img src={TitleLogo} alt="Title Logo" style={{ marginRight: '0.5rem' }} />
+      Statsanity
     </div>
+    <h1 className="registration-header">Sign up for free</h1>
+    <form>
+      <label className="label label-name">Name</label>
+      <input onChange={handleName} className="resgistration-input" value={name} type="text" />
+
+      <label className="label label-email">Email</label>
+      <input onChange={handleEmail} className="resgistration-input" value={email} type="email" />
+
+      <label className="label label-password">Password</label>
+      <input onChange={handlePassword} className="resgistration-input" value={password} type="password" />
+
+      <label className="label label-password">Confirm Password</label>
+      <input
+        onChange={handleConfirmPassword}
+        className="resgistration-input"
+        value={confirmPassword}
+        type="password"
+      />
+
+      <button onClick={handleSubmit} className="registration-btn" type="submit">
+        Create Account
+      </button>
+
+      <div className="error-container">
+          {errorMessage()}
+          {successMessage()}
+      </div>
+    </form>
+  </div>
   );
 };
 

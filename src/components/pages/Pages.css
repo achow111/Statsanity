@@ -161,10 +161,6 @@
   font-size: 1.875rem; /* 30px */
 }
 
-.messages {
-  margin-bottom: 0.625rem; /* 10px */
-}
-
 /* Style for labels */
 .label {
   margin: 0.625rem 0.375rem 0.3125rem 0.375rem; /* 10px 6px 5px 6px */
@@ -186,7 +182,7 @@
 .registration-btn {
   width: calc(100% - 1rem); /* Take up most of the available width */
   max-width: 28.125rem; /* 450px */
-  margin: 0.625rem 0.375rem 3.75rem 0.375rem; /* 10px 6px 60px 6px */
+  margin: 0.625rem 0.375rem 0.75rem 0.375rem; /* 10px 6px 60px 6px */
   background-color: #0F243F;
   padding: 0.625rem 1.25rem; /* 10px 20px */
   border: none;
@@ -200,6 +196,13 @@
 .registration-btn:hover {
   box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 0, 0, 0.5); /* 10px 5px */
 }
+
+.error-container {
+  margin-top: 0rem; /* Adjust the top margin as needed */
+  text-align: center;
+  color: #db6464; /* Set the color for error messages */
+}
+
 
 @media (max-width: 48.75rem) { /* 780px */
   .HeaderContainer {
