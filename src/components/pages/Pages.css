@@ -1,25 +1,55 @@
 /* Pages.css */
 
+
 .HeaderContainer {
   display: flex;
-  flex-direction: column; /* Change flex direction to column */
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 16%;
+  position: relative;
+}
+
+.HeaderText {
+  display: flex;
   align-items: center;
 }
-
-.Header {
-  text-align: center;
-  margin-top: 5px; /* Adjust top margin as needed */
-}
-
-.HeaderParagraph {
-  text-align: center;
-  margin: 10px 50px 5px 50px; /* Adjust top margin as needed */
+@keyframes bobbleRotate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(-90deg);
+  }
+  50% {
+    transform: translateY(0) rotate(-180deg);
+  }
+  75% {
+    transform: translateY(10px) rotate(-270deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-360deg);
+  }
 }
 
 .HomePagePhoto {
-  width: 100%; /* Stretch the image to 100% width */
-  height: auto; /* Maintain aspect ratio */
-  margin-bottom: 20px; /* Add bottom margin as needed */
+  width: 1800px;
+  height: auto;
+  margin-right: 16%;
+  z-index: 0;
+  animation: bobbleRotate 25s linear infinite; /* Adjust the duration and timing function as needed */
+}
+
+.Header {
+  text-align: left;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.HeaderParagraph {
+  display: flex;
+  text-align: left;
+  color: white;
 }
 
 .button-container {
@@ -27,6 +57,7 @@
 }
 
 .HomeButtons {
+  z-index: 1; 
   background: linear-gradient(to bottom right, #000000, #0F243F);
   color: white;
   padding: 20px;
