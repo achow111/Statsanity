@@ -1,0 +1,92 @@
+/* Pages.css */
+
+.HeaderContainer {
+  display: flex;
+  flex-direction: column; /* Change flex direction to column */
+  align-items: center;
+}
+
+.Header {
+  text-align: center;
+  margin-top: 5px; /* Adjust top margin as needed */
+}
+
+.HeaderParagraph {
+  text-align: center;
+  margin: 10px 50px 5px 50px; /* Adjust top margin as needed */
+}
+
+.HomePagePhoto {
+  width: 100%; /* Stretch the image to 100% width */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Add bottom margin as needed */
+}
+
+.button-container {
+  text-align: center;
+}
+
+.HomeButtons {
+  background: linear-gradient(to bottom right, #000000, #0F243F);
+  color: white;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px 15px;
+  height: 200px;
+  max-width: 600px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  transition: box-shadow 0.3s ease;
+}
+
+.HomeButtons:hover {
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+}
+
+.HomeButtons:hover img {
+  filter: invert(100%);
+}
+
+
+.ButtonHeading {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+.ButtonHeading img {
+  margin-right: 0.5rem;
+}
+
+.ButtonParagraph {
+  margin-left: 10px;
+  font-size: 14px; /* Adjusted font size */
+  margin-bottom: 0px 50px 0px 50px;
+  word-break: break-word;
+}
+
+.Buttons {
+  text-align: center;
+}
+
+
+.ButtonContent {
+  display: flex;
+  align-items: center;
+}
+
+.ButtonLogo {
+  margin-right: 0.5rem;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out; /* Add a transition for opacity */
+}
