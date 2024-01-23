@@ -1,18 +1,28 @@
 /* Pages.css */
 
+:root {
+  font-size: 16px; /* Set a base font size for the document */
+}
 
 .HeaderContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  margin-left: 16%;
+  margin-bottom: 1.25rem; /* 20px */
   position: relative;
+  padding-left: 35%;
   overflow: hidden;
+  flex-grow: 1;
+
+}
+
+.home-content{
+  align-items: center;
 }
 
 .page-content {
   animation: fade-in 1.5s;
+  align-items: center;
 }
 
 .HeaderText {
@@ -25,13 +35,13 @@
     transform: translateY(0) rotate(0deg);
   }
   25% {
-    transform: translateY(-10px) rotate(-90deg);
+    transform: translateY(-0.625rem) rotate(-90deg);
   }
   50% {
     transform: translateY(0) rotate(-180deg);
   }
   75% {
-    transform: translateY(10px) rotate(-270deg);
+    transform: translateY(0.625rem) rotate(-270deg);
   }
   100% {
     transform: translateY(0) rotate(-360deg);
@@ -39,40 +49,38 @@
 }
 
 .HomePagePhoto {
-  width: 1800px;
+  width: 112.5rem; /* 1800px */
   height: auto;
-  margin-right: 16%;
+  padding-left: 1rem;
+  margin-right: 10rem; /* 64px */
   z-index: 0;
   animation: bobbleRotate 25s linear infinite; /* Adjust the duration and timing function as needed */
 }
 
 .Header {
   text-align: left;
-  margin-bottom: 15px;
-  color: white;
+  align-items: center;
+  margin-bottom: 0.9375rem; /* 15px */
 }
 
 .HeaderParagraph {
   display: flex;
   text-align: left;
-  color: white;
+  font-size: 1.25rem;
 }
 
-.button-container {
-  text-align: center;
-}
+
 
 .HomeButtons {
-  z-index: 1; 
-  background: linear-gradient(to bottom right, #000000, #0F243F);
-  color: white;
-  padding: 20px;
+  z-index: 1;
+  background: linear-gradient(to bottom right, #000000, #0a192a);
+  padding: 1.25rem; /* 20px */
   border: none;
-  border-radius: 20px;
+  border-radius: 1.25rem; /* 20px */
   cursor: pointer;
-  margin: 20px 15px;
-  height: 200px;
-  max-width: 600px;
+  margin: 1.25rem 0.9375rem; /* 20px 15px */
+  height: 12.5rem; /* 200px */
+  max-width: 37.5rem; /* 600px */
   display: inline-block;
   text-align: left;
   vertical-align: top;
@@ -80,38 +88,35 @@
 }
 
 .HomeButtons:hover {
-  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1.25rem 0.625rem rgba(0, 0, 0, 0.5); /* 20px 10px */
 }
 
 .HomeButtons:hover img {
   filter: invert(100%);
 }
 
-
 .ButtonHeading {
-  font-size: 24px;
+  font-size: 1.5rem; /* 24px */
   font-weight: bold;
-  color: white;
-  margin-bottom: 10px;
-  margin-left: 10px;
+  margin-bottom: 0.625rem; /* 10px */
+  margin-left: 0.625rem; /* 10px */
   display: flex;
   align-items: center; /* Align items vertically */
 }
 
 .ButtonHeading img {
-  margin-right: 0.5rem;
+  margin-right: 0.3125rem; /* 5px */
 }
 
 .ButtonParagraph {
-  margin-left: 10px;
-  font-size: 16px; /* Adjusted font size */
-  margin-bottom: 0px 50px 0px 50px;
+  margin-left: 0.625rem; /* 10px */
+  font-size: 1.25rem; /* 16px */
+  margin-bottom: 0; /* Removed unnecessary margin */
 }
 
 .Buttons {
   text-align: center;
 }
-
 
 .ButtonContent {
   display: flex;
@@ -119,7 +124,7 @@
 }
 
 .ButtonLogo {
-  margin-right: 0.5rem;
+  margin-right: 0.3125rem; /* 5px */
 }
 
 @keyframes fade-in {
@@ -127,15 +132,80 @@
     opacity: 0;
   }
   to {
-    opacity: 100;
+    opacity: 1;
   }
 }
 
-@media (max-width: 780px) {
+.registration-logo {
+  font-size: 2rem; /* 2.0rem */
+  margin: 1rem;
+  margin-left: 0.375rem; /* 6px */
+  font-weight: 500;
+}
+
+.registration-form {
+  display: flex;
+  border-radius: 0.625rem; /* 10px */
+  flex-direction: column;
+  justify-content: center;
+  background: #0a192b;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0 auto; /* Auto margin for centering */
+  padding: 1.875rem; /* 30px */
+  max-width: 28.125rem; /* 450px */
+}
+
+.registration-header {
+  text-align: left;
+  margin: 1.25rem 0.375rem 1.25rem 0.375rem; /* 20px 6px 20px 6px */
+  font-size: 1.875rem; /* 30px */
+}
+
+.messages {
+  margin-bottom: 0.625rem; /* 10px */
+}
+
+/* Style for labels */
+.label {
+  margin: 0.625rem 0.375rem 0.3125rem 0.375rem; /* 10px 6px 5px 6px */
+  text-align: left; /* Ensure text is left-aligned */
+}
+
+/* Style for input fields */
+.resgistration-input {
+  width: calc(100% - 1rem); /* Take up most of the available width */
+  max-width: 28.125rem; /* 450px */
+  margin: 0.3125rem; /* Removed margin */
+  border: none;
+  background-color: #07111e;
+  margin-bottom: 1.25rem; /* 20px */
+  padding: 0.625rem; /* 10px */
+  border-radius: 0.375rem; /* 6px */
+}
+
+.registration-btn {
+  width: calc(100% - 1rem); /* Take up most of the available width */
+  max-width: 28.125rem; /* 450px */
+  margin: 0.625rem 0.375rem 3.75rem 0.375rem; /* 10px 6px 60px 6px */
+  background-color: #0F243F;
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  border: none;
+  border-radius: 0.625rem; /* 10px */
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  font-size: 1.125rem; /* 18px */
+  font-weight: 500;
+}
+
+.registration-btn:hover {
+  box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 0, 0, 0.5); /* 10px 5px */
+}
+
+@media (max-width: 48.75rem) { /* 780px */
   .HeaderContainer {
     flex-direction: column;
     text-align: center;
-    margin-left: 16%;
+    margin-left: 4rem; /* 64px */
   }
 
   .Header {
@@ -144,15 +214,5 @@
 
   .HeaderParagraph {
     display: flex;
-    text-align: center;
-    color: white;
-  }
-
-  .HomePagePhoto {
-    display: none; /* Hide the photo on small screens */
-  }
-
-  .Header {
-    margin-bottom: 10px; /* Adjust spacing for better appearance on small screens */
   }
 }
