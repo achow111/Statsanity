@@ -30,21 +30,39 @@
   align-items: center;
 }
 
-@keyframes bobbleRotate {
+@keyframes bobble {
   0% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0);
   }
   25% {
-    transform: translateY(-0.625rem) rotate(-90deg);
+    transform: translateY(-0.625rem) translateY(4rem);
   }
   50% {
-    transform: translateY(0) rotate(-180deg);
+    transform: translateY(0) translateY(0rem);
   }
   75% {
-    transform: translateY(0.625rem) rotate(-270deg);
+    transform: translateY(0.625rem) translateY(4em);
   }
   100% {
-    transform: translateY(0) rotate(-360deg);
+    transform: translateY(0) translateY(0rem);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 
@@ -54,7 +72,7 @@
   padding-left: 1rem;
   margin-right: 10rem; /* 64px */
   z-index: 0;
-  animation: bobbleRotate 25s linear infinite; /* Adjust the duration and timing function as needed */
+  animation: bobble 5s linear infinite, rotate 25s linear infinite;
 }
 
 .Header {
@@ -73,7 +91,7 @@
 
 .HomeButtons {
   z-index: 1;
-  background: linear-gradient(to bottom right, #000000, #0a192a);
+  background: #0a192b;
   padding: 1.25rem; /* 20px */
   border: none;
   border-radius: 1.25rem; /* 20px */
@@ -137,10 +155,14 @@
 }
 
 .registration-logo {
-  font-size: 2rem; /* 2.0rem */
+  font-size: 1.5rem; /* 2.0rem */
   margin: 1rem;
-  margin-left: 0.375rem; /* 6px */
+  margin-left: -14rem; /* 6px */
   font-weight: 500;
+}
+
+.registration-logo img{
+  width: 1.5rem;
 }
 
 .registration-form {
@@ -157,8 +179,8 @@
 
 .registration-header {
   text-align: left;
-  margin: 1.25rem 0.375rem 1.25rem 0.375rem; /* 20px 6px 20px 6px */
-  font-size: 1.875rem; /* 30px */
+  margin: 1.25rem 0rem 1.25rem -8.9rem; /* 20px 6px 20px 6px */
+  font-size: 2rem; /* 30px */
 }
 
 /* Style for labels */
@@ -183,18 +205,19 @@
   width: calc(100% - 1rem); /* Take up most of the available width */
   max-width: 28.125rem; /* 450px */
   margin: 0.625rem 0.375rem 0.75rem 0.375rem; /* 10px 6px 60px 6px */
-  background-color: #0F243F;
+  background-color: #a25600;
   padding: 0.625rem 1.25rem; /* 10px 20px */
   border: none;
   border-radius: 0.625rem; /* 10px */
   cursor: pointer;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
   font-size: 1.125rem; /* 18px */
   font-weight: 500;
 }
 
 .registration-btn:hover {
   box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 0, 0, 0.5); /* 10px 5px */
+  background-color: #663702; 
 }
 
 .error-container {
@@ -208,7 +231,6 @@
   .HeaderContainer {
     flex-direction: column;
     text-align: center;
-    margin-left: 4rem; /* 64px */
   }
 
   .Header {
@@ -218,4 +240,94 @@
   .HeaderParagraph {
     display: flex;
   }
+}
+
+@media (max-width: 100rem) { /* 1600px */
+  .HeaderContainer {
+    padding-left: 45%;
+    margin-right: -1rem;
+  }
+
+  .HomePagePhoto {
+    padding-right: 10%;
+    z-index: 0;
+  
+  }
+
+  .Header {
+    z-index: 1;
+   }
+}
+
+
+.container {
+  display: flex;
+  margin-top: 4rem;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.search-container {
+  box-sizing: border-box;
+  height: 80%;
+}
+
+.stats-form {
+  position: relative;
+  width: 40rem;
+  background: #a25600;
+  border-radius: 0.7rem;
+}
+
+.stats-input,
+.stats-button {
+  height: 4rem;
+  border: 0;
+
+  font-size: 1.8rem;
+}
+
+.stats-input[type="search"] {
+  outline: 0; /* <-- should probably remove this for better accessibility, adding for demo aesthetics for now. */
+  width: 101%;
+  background: #0a192b;
+  padding: 0 1.6rem;
+  border-radius: 0.7rem;
+  appearance: none; /* for iOS input[type="search"] roundedness issue. border-radius alone doesn't work */
+  transition: all 0.3s cubic-bezier(0, 0, 0.43, 1.49);
+  transition-property: width, border-radius;
+  z-index: 1;
+  position: relative;
+}
+
+.stats-button {
+  display: none; /* prevent being able to tab to it */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6rem;
+  font-weight: bold;
+  background: #a25600;
+  cursor: pointer;
+  border-radius: 0 0.7rem 0.7rem 0;
+}
+
+.stats-input:not(:placeholder-shown) {
+  border-radius: 0.7rem 0 0 0.7rem;
+  width: calc(100% - 6rem); /* Adjusted to keep the width on the right */
+}
+
+.stats-input:not(:placeholder-shown) + .stats-button {
+  display: block;
+}
+
+.stats-input[type="search"]::-webkit-search-clear-button {
+  display: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
 }

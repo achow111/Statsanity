@@ -1,4 +1,5 @@
 
+
 body {
     position: relative;
     background: #07111e;
@@ -41,6 +42,7 @@ nav .title img {
 
 nav ul {
     display: flex;
+    align-items: center;
 }
 
 nav ul li {
@@ -100,12 +102,20 @@ nav .menu {
     justify-content: space-between;
     width: 2.25rem;
     height: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 nav .menu span {
     height: 0.4rem;
     width: 100%;
     border-radius: 0.2rem;
+    background-color:white;
+}
+
+nav .menu:hover span{
+    background-color: #0087ca; 
+    transform: scale(1.1);
 }
 
 .line {
@@ -120,12 +130,23 @@ nav .menu span {
 }
 
 .nav-link {
-    display: flex;
+    display: inline-block;
 }
+
+@keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
 @media (max-width: 48.75rem) { /* 780px */
     nav .menu {
         display: flex;
+
+        animation: fade-in 1.5s;
     }
 
     nav {
@@ -138,10 +159,12 @@ nav .menu span {
         flex-direction: column;
         width: 100%;
         margin-bottom: 0.25rem;
+        opacity: 0;
     }
 
     nav ul.open {
         display: flex;
+        opacity: 1; 
     }
 
     nav ul li {

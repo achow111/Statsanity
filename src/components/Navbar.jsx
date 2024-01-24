@@ -28,9 +28,9 @@ export const Navbar = () => {
       <ul className={menuOpen ? 'open' : ''}>
         <li>
         <NavLink to='/Predictions'  className="nav-link">
-            <div className='nav-predictions'>Predictions</div>
-            <div className="nav-predictions">
-            <img src={PredLogo} alt="Predictions Logo" />
+            <div className='nav-predictions'>
+            Predictions
+            <span> <img src={PredLogo} alt="Predictions Logo" /> </span>
             </div>
             </NavLink>
         </li>
