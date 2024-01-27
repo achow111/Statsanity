@@ -7,9 +7,8 @@ const Stats = () => {
   return (
     <div className='page-content'>
       <h1 className="Main Heading">
-        Statsanity is your reference for basketball stats,
-        player profiles, team rosters, game scores 
-        and league standings throughout the world.
+        Your reference for basketball stats,
+        player profiles, team rosters, game scores
       </h1> 
       <img className='line' src={OrangeLine} alt="Orange Line" />
       <div className="container">
