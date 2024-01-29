@@ -186,7 +186,7 @@
 /* Style for labels */
 .label {
   margin: 0.625rem 0.375rem 0.3125rem 0.375rem; /* 10px 6px 5px 6px */
-  text-align: left; /* Ensure text is left-aligned */
+
 }
 
 /* Style for input fields */
@@ -334,4 +334,75 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
+}
+
+.login-logo {
+  font-size: 1.5rem;
+  margin: 1rem;
+  margin-left: -14rem;
+  font-weight: 500;
+}
+
+.login-logo img {
+  width: 1.5rem;
+}
+
+.login-form {
+  display: flex;
+  border-radius: 0.625rem;
+  flex-direction: column;
+  justify-content: center;
+  background: #0a192b;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0 auto;
+  padding: 1.875rem;
+  max-width: 28.125rem;
+}
+
+.login-header {
+  text-align: left;
+  margin: 1.25rem 0rem 1.25rem -3rem;
+  font-size: 2rem;
+}
+
+
+.login-input {
+  width: calc(100% - 1rem);
+  max-width: 28.125rem;
+  margin: 0.3125rem;
+  border: none;
+  background-color: #07111e;
+  margin-bottom: 1.25rem;
+  padding: 0.625rem;
+  border-radius: 0.375rem;
+}
+
+.login-btn {
+  width: calc(100% - 1rem);
+  max-width: 28.125rem;
+  margin: 0.625rem 0.375rem 0.75rem 0.375rem;
+  background-color: #a25600;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.login-btn:hover {
+  box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 0, 0, 0.5);
+  background-color: #663702;
+}
+
+.error-container {
+  margin-top: 0rem;
+  text-align: center;
+  color: #db6464;
+}
+
+.account-reroute {
+  text-align: center;
+  margin-top: 1rem;
 }

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import TitleLogo from '../TitleLogo.svg'
+import { Link } from 'react-router-dom';
+
 
 const Signup = () => {
   // States for registration
@@ -117,6 +119,9 @@ const Signup = () => {
       <div className="error-container">
           {errorMessage()}
           {successMessage()}
+          <div className="account-reroute">
+        <label>Already have an account? <Link className="" to="/Login">Login</Link></label>
+        </div>
       </div>
     </form>
   </div>
