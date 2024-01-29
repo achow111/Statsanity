@@ -1,6 +1,5 @@
 import React from 'react';
 import OrangeLine from '../OrangeLine.svg';
-import Search from '../Search.svg';
 
 const Stats = () => {
   
@@ -11,10 +10,10 @@ const Stats = () => {
         player profiles, team rosters, game scores
       </h1> 
       <img className='line' src={OrangeLine} alt="Orange Line" />
-      <div className="container">
-        <div className="search-container">
+      <div className="stats-search-container">
+        <div>
           <form className='stats-form' onSubmit={(event) => { event.preventDefault(); }}  role="search">
-            <input id="search" type="search" placeholder="Search for any player/team" autoFocus required className="stats-input" />
+            <input type="search" placeholder="Search player/team" autoFocus required className="stats-input" />
             <button type="submit" className="stats-button">
             Go
             </button>

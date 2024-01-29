@@ -53,7 +53,7 @@ const Login = () => {
   const successMessage = () => {
     return (
       <div className="success" style={{ display: submitted ? '' : 'none' }}>
-        <p className='label'>Login successful!</p>
+        <p className='success-container'>Login successful!</p>
       </div>
     );
   };
@@ -66,17 +66,22 @@ const Login = () => {
       </div>
       <h1 className="login-header">Login to your account</h1>
       <form>
-        <label className="label label-email">Email</label>
-        <input onChange={handleEmail} className="login-input" value={email} type="email" />
+        <input placeholder='Email' 
+        onChange={handleEmail} 
+        className="login-input" 
+        value={email} type="email" />
 
-        <label className="label label-password">Password</label>
-        <input onChange={handlePassword} className="login-input" value={password} type="password" />
+        <input placeholder='Password' 
+        onChange={handlePassword} 
+        className="login-input" 
+        value={password} 
+        type="password" />
 
         <button onClick={handleSubmit} className="login-btn" type="submit">
           Login
         </button>
         <div className="account-reroute">
-        <label>Don't have an account? <Link to="/Signup">Create Account</Link></label>
+        <label>Don't have an account? <Link className="login-link" to="/Signup">Create Account</Link></label>
         </div>
         <div className="error-container">
           {errorMessage()}

@@ -30,7 +30,7 @@ export const Navbar = () => {
         <NavLink to='/Predictions'  className="nav-link">
             <div className='nav-predictions'>
             Predictions
-            <span> <img src={PredLogo} alt="Predictions Logo" /> </span>
+            <span> <img className='pred-logo' src={PredLogo} alt="Predictions Logo" /> </span>
             </div>
             </NavLink>
         </li>

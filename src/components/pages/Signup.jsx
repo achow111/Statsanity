@@ -68,7 +68,7 @@ const Signup = () => {
           display: submitted ? '' : 'none',
         }}
       >
-        <p className='label'>{name} successfully registered!!</p>
+        <p className='success-container'>{name} successfully registered!!</p>
       </div>
     );
   };
@@ -95,17 +95,14 @@ const Signup = () => {
     </div>
     <h1 className="registration-header">Sign up for free</h1>
     <form>
-      <label className="label label-name">Name</label>
-      <input onChange={handleName} className="resgistration-input" value={name} type="text" />
+      <input placeholder='Name' onChange={handleName} className="resgistration-input" value={name} type="text" />
 
-      <label className="label label-email">Email</label>
-      <input onChange={handleEmail} className="resgistration-input" value={email} type="email" />
+      <input placeholder='Email' onChange={handleEmail} className="resgistration-input" value={email} type="email" />
 
-      <label className="label label-password">Password</label>
-      <input onChange={handlePassword} className="resgistration-input" value={password} type="password" />
+      <input placeholder='Password' onChange={handlePassword} className="resgistration-input" value={password} type="password" />
 
-      <label className="label label-password">Confirm Password</label>
       <input
+        placeholder='Confirm Password'
         onChange={handleConfirmPassword}
         className="resgistration-input"
         value={confirmPassword}
@@ -115,14 +112,13 @@ const Signup = () => {
       <button onClick={handleSubmit} className="registration-btn" type="submit">
         Create Account
       </button>
-
-      <div className="error-container">
+          <div className="account-reroute">
+        <label>Already have an account? <Link className="regis-link" to="/Login">Login</Link></label>
+        </div>
+        <div className="error-container">
           {errorMessage()}
           {successMessage()}
-          <div className="account-reroute">
-        <label>Already have an account? <Link className="" to="/Login">Login</Link></label>
         </div>
-      </div>
     </form>
   </div>
   );

@@ -2,15 +2,49 @@
 
 :root {
   font-size: 16px; /* Set a base font size for the document */
+  --background-color: #101010; /* black */
+  --box-shadow-color: rgba(54, 54, 54, 0.5); /* dim gray */
+  --button-background: #cf7106; /* dark orange */
+  --input-background: #000000; /* black */
+  --error-color: #db6464; /* indian red */
+  --success-color: rgb(153, 210, 153); /* medium sea green */
+  --link-color: orange;
+
+}
+
+#dark {
+  --background-color: #101010; /* black */
+  --box-shadow-color: rgba(54, 54, 54, 0.5); /* dim gray */
+  --button-background: #cf7106; /* dark orange */
+  --input-background: #000000; /* black */
+  --error-color: #db6464; /* indian red */
+  --success-color: rgb(153, 210, 153); /* medium sea green */
+  --link-color: orange;
+}
+
+#light {
+  --background-color: #f4e8e8; /* black */
+  --box-shadow-color: rgba(76, 76, 76, 0.5); /* dim gray */
+  --button-background: #cf7106; /* dark orange */
+  --input-background: #000000; /* black */
+  --error-color: #db6464; /* indian red */
+  --success-color: rgb(153, 210, 153); /* medium sea green */
+  --link-color: orange;
+}
+
+.page-content {
+  animation: fade-in 1.5s;
+  align-items: center;
 }
 
 .HeaderContainer {
+  margin-top: 3rem;
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1.25rem; /* 20px */
+  margin-bottom: 5.25rem; /* 20px */
   position: relative;
-  padding-left: 35%;
   overflow: hidden;
   flex-grow: 1;
 
@@ -20,10 +54,6 @@
   align-items: center;
 }
 
-.page-content {
-  animation: fade-in 1.5s;
-  align-items: center;
-}
 
 .HeaderText {
   display: flex;
@@ -35,70 +65,49 @@
     transform: translateY(0);
   }
   25% {
-    transform: translateY(-0.625rem) translateY(4rem);
+    transform: translateY(-0.625rem) translateY(2rem);
   }
   50% {
     transform: translateY(0) translateY(0rem);
   }
   75% {
-    transform: translateY(0.625rem) translateY(4em);
+    transform: translateY(0.625rem) translateY(2em);
   }
   100% {
     transform: translateY(0) translateY(0rem);
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(30deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  75% {
-    transform: rotate(-30deg);
-  }
-  100% {
-    transform: rotate(0deg);
   }
 }
 
 .HomePagePhoto {
-  width: 112.5rem; /* 1800px */
+  width: 40.5rem; /* 1800px */
   height: auto;
-  padding-left: 1rem;
-  margin-right: 10rem; /* 64px */
-  z-index: 0;
-  animation: bobble 5s linear infinite, rotate 25s linear infinite;
+  padding-left: 2rem;
+  margin-right: 15%; /* 64px */
+  position: relative;
 }
 
 .Header {
-  text-align: left;
+  font-size: 5rem;
   align-items: center;
   margin-bottom: 0.9375rem; /* 15px */
 }
 
 .HeaderParagraph {
   display: flex;
-  text-align: left;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  justify-content: center;
 }
-
-
 
 .HomeButtons {
   z-index: 1;
-  background: #0a192b;
+  background: var(--background-color);
   padding: 1.25rem; /* 20px */
   border: none;
   border-radius: 1.25rem; /* 20px */
   cursor: pointer;
-  margin: 1.25rem 0.9375rem; /* 20px 15px */
-  height: 12.5rem; /* 200px */
-  max-width: 37.5rem; /* 600px */
+  margin: 2.25rem 0.9375rem; /* 20px 15px */
+  height: 15.0rem; /* 200px */
+  max-width: 40.0rem; /* 600px */
   display: inline-block;
   text-align: left;
   vertical-align: top;
@@ -106,7 +115,7 @@
 }
 
 .HomeButtons:hover {
-  box-shadow: 0 0 1.25rem 0.625rem rgba(0, 0, 0, 0.5); /* 20px 10px */
+  box-shadow: 0 0 1.25rem 0.625rem var(--box-shadow-color); /* 20px 10px */
 }
 
 .HomeButtons:hover img {
@@ -114,7 +123,7 @@
 }
 
 .ButtonHeading {
-  font-size: 1.5rem; /* 24px */
+  font-size: 2.0rem; /* 24px */
   font-weight: bold;
   margin-bottom: 0.625rem; /* 10px */
   margin-left: 0.625rem; /* 10px */
@@ -170,9 +179,9 @@
   border-radius: 0.625rem; /* 10px */
   flex-direction: column;
   justify-content: center;
-  background: #0a192b;
+  background: var(--background-color);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0 auto; /* Auto margin for centering */
+  margin: 2.5rem auto; /* Auto margin for centering */
   padding: 1.875rem; /* 30px */
   max-width: 28.125rem; /* 450px */
 }
@@ -183,11 +192,6 @@
   font-size: 2rem; /* 30px */
 }
 
-/* Style for labels */
-.label {
-  margin: 0.625rem 0.375rem 0.3125rem 0.375rem; /* 10px 6px 5px 6px */
-
-}
 
 /* Style for input fields */
 .resgistration-input {
@@ -195,17 +199,22 @@
   max-width: 28.125rem; /* 450px */
   margin: 0.3125rem; /* Removed margin */
   border: none;
-  background-color: #07111e;
+  height: 3rem;
+  background-color: var(--input-background);
   margin-bottom: 1.25rem; /* 20px */
   padding: 0.625rem; /* 10px */
   border-radius: 0.375rem; /* 6px */
+}
+
+.resgistration-input::placeholder{
+  font-size: 1rem;
 }
 
 .registration-btn {
   width: calc(100% - 1rem); /* Take up most of the available width */
   max-width: 28.125rem; /* 450px */
   margin: 0.625rem 0.375rem 0.75rem 0.375rem; /* 10px 6px 60px 6px */
-  background-color: #a25600;
+  background-color: var(--button-background);
   padding: 0.625rem 1.25rem; /* 10px 20px */
   border: none;
   border-radius: 0.625rem; /* 10px */
@@ -217,13 +226,18 @@
 
 .registration-btn:hover {
   box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 0, 0, 0.5); /* 10px 5px */
-  background-color: #663702; 
+  background-color: #9d5504; 
 }
 
 .error-container {
   margin-top: 0rem; /* Adjust the top margin as needed */
   text-align: center;
-  color: #db6464; /* Set the color for error messages */
+  color: var(--error-color); /* Set the color for error messages */
+}
+
+.success-container {
+  margin-top: 1rem;
+  color: var(--success-color);
 }
 
 
@@ -234,7 +248,7 @@
   }
 
   .Header {
-    text-align: left;
+    text-align: center;
   }
 
   .HeaderParagraph {
@@ -243,10 +257,6 @@
 }
 
 @media (max-width: 100rem) { /* 1600px */
-  .HeaderContainer {
-    padding-left: 45%;
-    margin-right: -1rem;
-  }
 
   .HomePagePhoto {
     padding-right: 10%;
@@ -260,40 +270,35 @@
 }
 
 
-.container {
+.stats-search-container {
   display: flex;
   margin-top: 4rem;
   justify-content: center;
   min-height: 100vh;
 }
 
-.search-container {
-  box-sizing: border-box;
-  height: 80%;
-}
-
 .stats-form {
   position: relative;
-  width: 40rem;
-  background: #a25600;
+  width: 50rem;
+  background: var(--button-background);
   border-radius: 0.7rem;
 }
 
 .stats-input,
 .stats-button {
-  height: 4rem;
+  height: 3rem;
   border: 0;
 
-  font-size: 1.8rem;
+  font-size: 1.3rem;
 }
 
 .stats-input[type="search"] {
-  outline: 0; /* <-- should probably remove this for better accessibility, adding for demo aesthetics for now. */
+  outline: 0; 
   width: 101%;
-  background: #0a192b;
+  background: #101010;
   padding: 0 1.6rem;
-  border-radius: 0.7rem;
-  appearance: none; /* for iOS input[type="search"] roundedness issue. border-radius alone doesn't work */
+  border-radius: 0.6rem;
+  appearance: none; 
   transition: all 0.3s cubic-bezier(0, 0, 0.43, 1.49);
   transition-property: width, border-radius;
   z-index: 1;
@@ -307,13 +312,14 @@
   right: 0;
   width: 6rem;
   font-weight: bold;
-  background: #a25600;
+  background: var(--button-background);
   cursor: pointer;
   border-radius: 0 0.7rem 0.7rem 0;
 }
 
 .stats-input::placeholder {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+
 }
 
 .stats-input:not(:placeholder-shown) {
@@ -352,9 +358,9 @@ input[type="search"]::-webkit-search-results-decoration {
   border-radius: 0.625rem;
   flex-direction: column;
   justify-content: center;
-  background: #0a192b;
+  background: var(--background-color);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0 auto;
+  margin: 2.5rem auto;
   padding: 1.875rem;
   max-width: 28.125rem;
 }
@@ -370,18 +376,23 @@ input[type="search"]::-webkit-search-results-decoration {
   width: calc(100% - 1rem);
   max-width: 28.125rem;
   margin: 0.3125rem;
+  height: 3rem;
   border: none;
-  background-color: #07111e;
+  background-color: var(--input-background);
   margin-bottom: 1.25rem;
   padding: 0.625rem;
   border-radius: 0.375rem;
+}
+
+.login-input::placeholder{
+  font-size: 1rem;
 }
 
 .login-btn {
   width: calc(100% - 1rem);
   max-width: 28.125rem;
   margin: 0.625rem 0.375rem 0.75rem 0.375rem;
-  background-color: #a25600;
+  background-color: var(--button-background);
   padding: 0.625rem 1.25rem;
   border: none;
   border-radius: 0.625rem;
@@ -393,16 +404,25 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .login-btn:hover {
   box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 0, 0, 0.5);
-  background-color: #663702;
+  background-color: #9d5504;
 }
 
 .error-container {
   margin-top: 0rem;
   text-align: center;
-  color: #db6464;
+  color: var(--error-color);
 }
 
 .account-reroute {
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 1rem; 
+}
+
+.regis-link, .login-link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.regis-link:hover, .login-link:hover {
+  text-decoration: underline; /* Add underline on hover if needed */
 }
