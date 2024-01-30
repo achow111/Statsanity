@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Pages.css';
 
-import Tatum from '../basketball.png';
 import PredLogo from '../OrangePred.svg';
 import StatsLogo from '../OrangeStats.svg';
 
@@ -15,7 +14,7 @@ const HomePage = () => {
         <div className="Header-and-Paragraph">
           <h1 className='Header'>Own the Whole Court</h1>
           <p className='HeaderParagraph'>
-            The game isn't just in the match—it's in the data.
+            The game isn't just in the matches. it's in the data.
           </p>
         </div>
       </div>

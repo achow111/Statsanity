@@ -342,96 +342,24 @@ input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
-.login-logo {
-  font-size: 1.5rem;
-  margin: 1rem;
-  margin-left: -14rem;
-  font-weight: 500;
+.stat-player-info {
+  text-align: center;
+  margin-top: 1rem; /* Adjust the margin-top as needed */
 }
 
-.login-logo img {
-  width: 1.5rem;
-}
-
-.login-form {
+.stats-results-container {
   display: flex;
-  border-radius: 0.625rem;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  background: var(--background-color);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 2.5rem auto;
-  padding: 1.875rem;
-  max-width: 28.125rem;
+  min-height: 100vh;
+  margin-top: -75rem;
 }
 
-.login-header {
-  text-align: left;
-  margin: 1.25rem 0rem 1.25rem -3rem;
-  font-size: 2rem;
-}
-
-
-.login-input {
-  width: calc(100% - 1rem);
-  max-width: 28.125rem;
-  margin: 0.3125rem;
-  height: 3rem;
-  border: none;
-  background-color: var(--input-background);
-  margin-bottom: 1.25rem;
-  padding: 0.625rem;
-  border-radius: 0.375rem;
-}
-
-.login-input::placeholder{
-  font-size: 1rem;
-}
-
-.login-btn {
-  width: calc(100% - 1rem);
-  max-width: 28.125rem;
-  margin: 0.625rem 0.375rem 0.75rem 0.375rem;
-  background-color: var(--button-background);
-  padding: 0.625rem 1.25rem;
-  border: none;
-  border-radius: 0.625rem;
-  cursor: pointer;
-  transition: box-shadow 0.3s ease, background-color 0.3s ease;
-  font-size: 1.125rem;
-  font-weight: 500;
-}
-
-.login-btn:hover {
-  box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 0, 0, 0.5);
-  background-color: #9d5504;
-}
-
-.error-container {
-  margin-top: 0rem;
-  text-align: center;
-  color: var(--error-color);
-}
-
-.account-reroute {
-  text-align: center;
-  margin-top: 1rem; 
-}
-
-.regis-link, .login-link {
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-.regis-link:hover, .login-link:hover {
-  text-decoration: underline; /* Add underline on hover if needed */
-}
 
 .stats-search-container {
   display: flex;
   margin-top: 4rem;
   justify-content: center;
-  min-height: 100vh;
 }
 
 .stats-form {
@@ -527,4 +455,89 @@ input[type="search"]::-webkit-search-results-decoration {
   padding: 1rem;
   text-align: center;
   color: white; /* Adjust color as needed */
+}
+
+.login-logo {
+  font-size: 1.5rem;
+  margin: 1rem;
+  margin-left: -14rem;
+  font-weight: 500;
+}
+
+.login-logo img {
+  width: 1.5rem;
+}
+
+.login-form {
+  display: flex;
+  border-radius: 0.625rem;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--background-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 2.5rem auto;
+  padding: 1.875rem;
+  max-width: 28.125rem;
+}
+
+.login-header {
+  text-align: left;
+  margin: 1.25rem 0rem 1.25rem -3rem;
+  font-size: 2rem;
+}
+
+
+.login-input {
+  width: calc(100% - 1rem);
+  max-width: 28.125rem;
+  margin: 0.3125rem;
+  height: 3rem;
+  border: none;
+  background-color: var(--input-background);
+  margin-bottom: 1.25rem;
+  padding: 0.625rem;
+  border-radius: 0.375rem;
+}
+
+.login-input::placeholder{
+  font-size: 1rem;
+}
+
+.login-btn {
+  width: calc(100% - 1rem);
+  max-width: 28.125rem;
+  margin: 0.625rem 0.375rem 0.75rem 0.375rem;
+  background-color: var(--button-background);
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.login-btn:hover {
+  box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 0, 0, 0.5);
+  background-color: #9d5504;
+}
+
+.error-container {
+  margin-top: 0rem;
+  text-align: center;
+  color: var(--error-color);
+}
+
+.account-reroute {
+  text-align: center;
+  margin-top: 1rem; 
+}
+
+.regis-link, .login-link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.regis-link:hover, .login-link:hover {
+  text-decoration: underline; /* Add underline on hover if needed */
 }

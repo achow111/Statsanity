@@ -7,10 +7,12 @@ const Stats = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [selectedPlayer, setSelectedPlayer] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.get(`https://www.balldontlie.io/api/v1/players?search=${searchTerm}`)
+    const sanitizedSearchTerm = searchTerm.replace(/\s/g, ''); // Remove spaces from the search term
+    axios.get(`https://www.balldontlie.io/api/v1/players?search=${sanitizedSearchTerm}`)
       .then(response => {
         setSearchResults(response.data.data);
       })
@@ -19,17 +21,35 @@ const Stats = () => {
       });
   };
   
+  
   useEffect(() => {
     handleSubmit(new Event('submit'));
   }, [searchTerm]);
 
   const getSuggestions = (inputValue) => {
-    return searchResults.filter(
-      player => player.first_name.toLowerCase().startsWith(inputValue.toLowerCase()) ||
-                player.last_name.toLowerCase().startsWith(inputValue.toLowerCase())
+    const names = inputValue.toLowerCase().split(' ');
+    const firstName = names[0];
+    const lastName = names.slice(1).join(' ');
+  
+    const suggestionsByFullName = searchResults.filter(
+      (player) =>
+        `${player.first_name} ${player.last_name}`.toLowerCase().includes(inputValue.toLowerCase())
     );
+  
+    if (suggestionsByFullName.length === 0) {
+      const suggestionsByFirstLast = searchResults.filter(
+        (player) =>
+          (player.first_name.toLowerCase().startsWith(firstName) &&
+            player.last_name.toLowerCase().startsWith(lastName)) ||
+          (player.last_name.toLowerCase().startsWith(firstName) &&
+            player.first_name.toLowerCase().startsWith(lastName))
+      );
+  
+      return suggestionsByFirstLast;
+    }
+  
+    return suggestionsByFullName;
   };
-
   const handleChange = (event) => {
     const userInput = event.target.value;
     const filteredSuggestions = getSuggestions(userInput);
@@ -39,7 +59,14 @@ const Stats = () => {
   };
 
   const handleClick = (event) => {
-    setSearchTerm(event.target.innerText);
+    const selectedName = event.target.innerText;
+    const selectedPlayerData = searchResults.find(
+      (player) =>
+        `${player.first_name} ${player.last_name}`.toLowerCase() === selectedName.toLowerCase()
+    );
+
+    setSelectedPlayer(selectedPlayerData);
+    setSearchTerm(selectedName);
     setSuggestions([]);
     setShowSuggestions(false);
   };
@@ -88,31 +115,31 @@ const Stats = () => {
       </h1> 
       <img className='line' src={OrangeLine} alt="Orange Line" />
       <div className="stats-search-container">
-        <div>
+        <div className='search-suggestions'>
           <form className='stats-form' onSubmit={handleSubmit} role="search">
             <input type="search" placeholder="Search player/team" autoFocus required className="stats-input" value={searchTerm} onChange={handleChange} />
             <button type="submit" className="stats-button">
-            Go
+              Go
             </button>
           </form>
           {renderSuggestions()}
         </div>
       </div>
       <div className="stats-results-container">
-        {searchResults.length > 0 ? (
-          <ul className="stats-results-list">
-            {searchResults.map(player => (
-              <li key={player.id} className="stats-result-item">
-                <h2 className="stats-result-name">{player.first_name} {player.last_name}</h2>
-                <p className="stats-result-team">{player.team.full_name}</p>
-                <p className="stats-result-position">{player.position}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="stats-no-results">No results found</p>
-        )}
+      {selectedPlayer ? (
+        <div className='stat-player-info'>
+        <h2>{selectedPlayer.first_name} {selectedPlayer.last_name}</h2>
+          <p>
+            {selectedPlayer.team.full_name}
+            {selectedPlayer.height_feet !== null && selectedPlayer.height_inches !== null ? ` • ${selectedPlayer.height_feet}'${selectedPlayer.height_inches}''` : ''}
+            {selectedPlayer.position ? ` • Position: ${selectedPlayer.position}` : ''}
+          </p>
       </div>
+      ) : (
+        <p className="stats-no-results"></p>
+      )}
+    </div>
+
     </div>
   );
 };
