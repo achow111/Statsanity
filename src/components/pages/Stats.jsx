@@ -23,7 +23,6 @@ const Stats = () => {
     handleSubmit(new Event('submit'));
   }, [searchTerm]);
 
-  // Function to filter suggestions based on user input
   const getSuggestions = (inputValue) => {
     return searchResults.filter(
       player => player.first_name.toLowerCase().startsWith(inputValue.toLowerCase()) ||
@@ -31,7 +30,6 @@ const Stats = () => {
     );
   };
 
-  // Function to handle input change
   const handleChange = (event) => {
     const userInput = event.target.value;
     const filteredSuggestions = getSuggestions(userInput);
@@ -40,20 +38,31 @@ const Stats = () => {
     setShowSuggestions(true);
   };
 
-  // Function to handle suggestion click
   const handleClick = (event) => {
     setSearchTerm(event.target.innerText);
     setSuggestions([]);
     setShowSuggestions(false);
   };
 
-  // Function to render suggestions list
+  const compareNames = (a, b) => {
+    // a and b are objects of the form {first_name, last_name, ...}
+    // compare the last names first
+    if (a.last_name < b.last_name) return -1;
+    if (a.last_name > b.last_name) return 1;
+    // if the last names are equal, compare the first names
+    if (a.first_name < b.first_name) return -1;
+    if (a.first_name > b.first_name) return 1;
+    // if both names are equal, return 0
+    return 0;
+  };  
+
   const renderSuggestions = () => {
     if (showSuggestions && searchTerm) {
       if (suggestions.length) {
+        const sortedSuggestions = suggestions.slice().sort(compareNames);
         return (
           <ul className="suggestions-list">
-            {suggestions.map((player, index) => (
+            {sortedSuggestions.map((player, index) => (
               <li key={index} onClick={handleClick} className="suggestion-item">
                 {player.first_name} {player.last_name}
               </li>
