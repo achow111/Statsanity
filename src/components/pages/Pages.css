@@ -4,11 +4,12 @@
   font-size: 16px; /* Set a base font size for the document */
   --background-color: #101010; /* black */
   --box-shadow-color: rgba(54, 54, 54, 0.5); /* dim gray */
-  --button-background: #cf7106; /* dark orange */
+  --button-background: #cf06c5; /* dark orange */
   --input-background: #000000; /* black */
   --error-color: #db6464; /* indian red */
   --success-color: rgb(153, 210, 153); /* medium sea green */
   --link-color: orange;
+  --white: #ffffff;
 
 }
 
@@ -229,12 +230,6 @@
   background-color: #9d5504; 
 }
 
-.error-container {
-  margin-top: 0rem; /* Adjust the top margin as needed */
-  text-align: center;
-  color: var(--error-color); /* Set the color for error messages */
-}
-
 .success-container {
   margin-top: 1rem;
   color: var(--success-color);
@@ -274,14 +269,7 @@
   display: flex;
   margin-top: 4rem;
   justify-content: center;
-  min-height: 100vh;
-}
 
-.stats-form {
-  position: relative;
-  width: 50rem;
-  background: var(--button-background);
-  border-radius: 0.7rem;
 }
 
 .stats-input,
@@ -342,9 +330,10 @@ input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
-.stat-player-info {
+.stats-player-info {
   text-align: center;
   margin-top: 1rem; /* Adjust the margin-top as needed */
+  animation: fade-in 1.5s;
 }
 
 .stats-results-container {
@@ -352,7 +341,6 @@ input[type="search"]::-webkit-search-results-decoration {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  margin-top: -75rem;
 }
 
 
@@ -451,11 +439,58 @@ input[type="search"]::-webkit-search-results-decoration {
   background-color: rgba(207, 113, 6, 0.2); /* Adjust as needed */
 }
 
+.stats-player-info {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.stats-player-name {
+  font-size: 2rem;
+}
+
+.stats-player-profile {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.stats-career-stats-container {
+  margin-top: 1.5rem;
+  overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
+  animation: fade-in 1.5s;
+}
+
+.stats-career-stats-header {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stats-seasons-list {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
 .no-suggestions {
   padding: 1rem;
   text-align: center;
   color: white; /* Adjust color as needed */
 }
+
+.stats-seasons-table {
+  width: 30%; 
+  margin: auto; /* Center the chart horizontally */
+  border-collapse: separate;
+  border-spacing: 0rem 0rem;
+  margin-top: 1rem;
+}
+
+.stats-seasons-table th, .stats-seasons-table td {
+  padding: 0.3rem;
+  text-align: center;
+  border: 0.05rem solid var(--button-background);
+  border-width: 0 0.05rem; 
+}
+
 
 .login-logo {
   font-size: 1.5rem;
