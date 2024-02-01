@@ -1,0 +1,2 @@
+requests
+beautifulksoup4

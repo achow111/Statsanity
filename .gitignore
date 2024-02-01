@@ -181,3 +181,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+#team data
+team_data/
+TOR_player_data/
+
