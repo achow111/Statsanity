@@ -184,4 +184,4 @@ yarn-error.log*
 #team data
 team_data/
 TOR_player_data/
-
+TOR_players.csv
