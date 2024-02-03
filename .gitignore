@@ -185,3 +185,5 @@ yarn-error.log*
 team_data/
 TOR_player_data/
 TOR_players.csv
+roster_data/
+team_ratings.csv
