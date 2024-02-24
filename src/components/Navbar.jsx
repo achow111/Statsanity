@@ -26,17 +26,24 @@ export const Navbar = () => {
         <span></span>
       </div>
       <ul className={menuOpen ? 'open' : ''}>
+      <li>
+        <NavLink to='/'  className="nav-link">
+            <div className='nav-predictions'>
+            Home
+            
+            </div>
+            </NavLink>
+        </li>
         <li>
         <NavLink to='/Predictions'  className="nav-link">
             <div className='nav-predictions'>
             Predictions
-            <span> <img className='pred-logo' src={PredLogo} alt="Predictions Logo" /> </span>
+            
             </div>
             </NavLink>
         </li>
         <li>
         <NavLink to ='/Stats'>Stats
-        <img src={StatsLogo} alt="Stats Logo" style={{ marginLeft: '0.5rem' }}/>
         </NavLink>
         </li>
         <li>

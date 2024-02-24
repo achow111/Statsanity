@@ -34,30 +34,22 @@
 
 .page-content {
   animation: fade-in 1.5s;
-  align-items: center;
 }
 
 .HeaderContainer {
-  margin-top: 3rem;
   display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 5.25rem; /* 20px */
+  margin-left: 9rem;
+  margin-bottom: 3.25rem; /* 20px */
   position: relative;
   overflow: hidden;
   flex-grow: 1;
 
 }
 
-.home-content{
-  align-items: center;
-}
 
 
 .HeaderText {
   display: flex;
-  align-items: center;
 }
 
 @keyframes bobble {
@@ -78,24 +70,15 @@
   }
 }
 
-.HomePagePhoto {
-  width: 40.5rem; /* 1800px */
-  height: auto;
-  padding-left: 2rem;
-  margin-right: 15%; /* 64px */
-  position: relative;
-}
 
 .Header {
-  font-size: 5rem;
-  align-items: center;
-  margin-bottom: 0.9375rem; /* 15px */
+  font-size: 3rem;
+  margin-bottom: 0.3rem; /* 15px */
 }
 
 .HeaderParagraph {
   display: flex;
-  font-size: 1.5rem;
-  justify-content: center;
+  font-size: 1rem;
 }
 
 .HomeButtons {
@@ -105,9 +88,9 @@
   border: none;
   border-radius: 1.25rem; /* 20px */
   cursor: pointer;
-  margin: 2.25rem 0.9375rem; /* 20px 15px */
-  height: 15.0rem; /* 200px */
-  max-width: 40.0rem; /* 600px */
+  margin-right: 2rem; /* 20px 15px */
+  height: 10.0rem; /* 200px */
+  max-width: 40rem; /* 600px */
   display: inline-block;
   text-align: left;
   vertical-align: top;
@@ -123,7 +106,7 @@
 }
 
 .ButtonHeading {
-  font-size: 2.0rem; /* 24px */
+  font-size: 1.5rem; /* 24px */
   font-weight: bold;
   margin-bottom: 0.625rem; /* 10px */
   margin-left: 0.625rem; /* 10px */
@@ -137,12 +120,12 @@
 
 .ButtonParagraph {
   margin-left: 0.625rem; /* 10px */
-  font-size: 1.25rem; /* 16px */
+  font-size: 1rem; /* 16px */
   margin-bottom: 0; /* Removed unnecessary margin */
 }
 
 .Buttons {
-  text-align: center;
+  margin-left: 8.8rem;
 }
 
 .ButtonContent {

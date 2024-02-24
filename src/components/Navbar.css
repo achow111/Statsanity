@@ -10,20 +10,23 @@ body {
 nav {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #000000;
     position: sticky;
     top: 0;
     z-index: 2;
+    margin-left: 7rem;
+    margin-top: 4rem;
 }
 
 nav .title {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
-    margin: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    margin-left: 2.7rem;
     font-weight: 500;
     text-decoration: none;
 }
@@ -36,18 +39,25 @@ nav .title {
 }
 
 nav .title img {
-    height: 2.0rem;
+    height: 1.7rem;
     margin-right: 0.5rem;
 }
 
 nav ul {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    padding-left: 0.5rem;
+    max-width: 25rem;
+    border-radius: 1.25rem;
+    background-color: #1d1d1d;
+    margin-left: 2rem;
     display: flex;
     align-items: center;
 }
 
 nav ul li {
     list-style: none;
-    margin-right: 1.25rem; /* Adjusted margin for better spacing */
+    margin-right: 0.5rem; /* Adjusted margin for better spacing */
 }
 
 nav ul li a {
