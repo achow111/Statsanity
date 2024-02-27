@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TitleLogo from '../TitleLogo.svg'
+import TitleLogo from '../images/TitleLogo.svg'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';

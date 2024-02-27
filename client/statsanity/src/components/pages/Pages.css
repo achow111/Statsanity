@@ -415,12 +415,13 @@
   margin-top: 4rem;
   justify-content: left;
   min-height: 100vh;
+  margin-right: 55%;
 }
 
 .stats-form {
   position: relative;
   width: 50rem;
-  margin-right: 13rem;
+  margin-right: 20%;
   margin-top: -2rem;
   background: var(--button-background);
   border-radius: 0.7rem;
@@ -433,6 +434,60 @@
 
   font-size: 1.3rem;
 }
+
+.stats-table{
+  margin-top: -50rem;
+}
+
+.player-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 90%;
+  font-weight: 250;
+  border-collapse: collapse;
+
+}
+
+.table-header {
+  text-align: left;
+  background-color: #6b3a02;
+  font-size: 16px; /* Adjust the font size to make the header bigger */
+  padding: 10px 6px; /* Add padding to create space around the text */
+ font-weight: 400;
+}
+
+.table-body {
+  text-align: center;
+  padding: 8px 6px;
+  background-color: #1d1d1d;
+  border-radius: 8px;
+  border: none !important; /* Use !important to override any other border styles */
+
+}
+
+.table-name{
+  text-align: left;
+}
+
+.table-body tr:nth-child(even) {
+  background-color: #222222; /* Light grey */
+}
+
+.table-body tr:nth-child(odd) {
+  background-color: #191919; /* Darker grey */
+}
+
+
+
+td {
+  padding: 6px;
+}
+
+/* Additional styling can be added as needed */
+
 
 .stats-input[type="search"] {
   outline: 0; 
@@ -501,7 +556,6 @@ input[type="search"]::-webkit-search-results-decoration {
 .stats-search-container {
   display: flex;
   margin-top: 4rem;
-  justify-content: center;
 }
 
 .stats-form {

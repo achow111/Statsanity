@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TitleLogo from '../TitleLogo.svg';
+import TitleLogo from '../images/TitleLogo.svg';
 import { Link } from 'react-router-dom';
 import {toast} from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom'; 

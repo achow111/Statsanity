@@ -15,7 +15,7 @@ import Login from './components/pages/Login';
 
 import { createContext, useState } from "react";
 
-import Background from './components/Background.svg';
+import Background from './components/images/Background.svg';
 
 
 export const ThemeContext = createContext(null);

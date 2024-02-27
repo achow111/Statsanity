@@ -3,8 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Pages.css';
 
-import PredLogo from '../OrangePred.svg';
-import StatsLogo from '../OrangeStats.svg';
+import PredLogo from '../images/OrangePred.svg';
+import StatsLogo from '../images/OrangeStats.svg';
 
 const HomePage = () => {
   return (

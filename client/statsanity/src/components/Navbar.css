@@ -19,6 +19,12 @@ nav {
     margin-top: 4rem;
 }
 
+.nav.sticky {
+    backdrop-filter: blur(10px); /* Add a blur effect */
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust the background color with transparency */
+    transition: background-color 0.3s ease; /* Add transition for smooth effect */
+ }
+
 nav .title {
     display: flex;
     align-items: center;

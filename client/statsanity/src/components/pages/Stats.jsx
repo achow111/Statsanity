@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PlayerTable from '../RankTable';
 
 const Stats = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -91,22 +92,10 @@ const Stats = () => {
           </form>
         </div>
       </div>
-      </div> 
-      <div className="stats-results-container">
-      {selectedPlayer ? (
-        <div className='stat-player-info'>
-        <h2>{selectedPlayer.first_name} {selectedPlayer.last_name}</h2>
-          <p>
-            {selectedPlayer.team.full_name}
-            {selectedPlayer.height_feet !== null && selectedPlayer.height_inches !== null ? ` • ${selectedPlayer.height_feet}'${selectedPlayer.height_inches}''` : ''}
-            {selectedPlayer.position ? ` • Position: ${selectedPlayer.position}` : ''}
-          </p>
+      <div className='stats-table'>
+        <PlayerTable/>
       </div>
-      ) : (
-        <p className="stats-no-results"></p>
-      )}
-    </div>
-
+      </div> 
     </div>
   );
 };

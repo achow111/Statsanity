@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import './Navbar.css'
 
-import TitleLogo from './TitleLogo.svg';
+import TitleLogo from './images/TitleLogo.svg';
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
