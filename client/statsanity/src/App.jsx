@@ -12,6 +12,10 @@ import Predictions from './components/pages/Predictions';
 import HomePage from './components/pages/HomePage';
 import Signup from './components/pages/Signup';
 import Login from './components/pages/Login';
+import Profile from './components/pages/Profile';
+
+
+import { UserContextProvider } from './context/userContext.jsx';
 
 import { createContext, useState } from "react";
 
@@ -31,12 +35,14 @@ const App = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
   };
 
-  return <ThemeContext.Provider value={{ theme, toggleTheme }}>
+  return (
+  <UserContextProvider>
+  <ThemeContext.Provider value={{ theme, toggleTheme }}>
   <div className='App' id={theme}>
   <img src={Background} className='background' alt="Title Logo" />
 
       <Navbar/>
-      <Toaster position='bottom-right' toastOptions={{duration: 2000}}/>
+      <Toaster position='top-center' toastOptions={{duration: 2000}}/>
       <Routes>
       <Route path ='/' element={<HomePage/>}/>
 
@@ -44,10 +50,14 @@ const App = () => {
         <Route path ='/Predictions' element={<Predictions/>}/>
         <Route path ='/Signup' element={<Signup/>}/>
         <Route path ='/Login' element={<Login/>}/>
+        <Route path ='/Profile' element={<Profile/>}/>
+
 
       </Routes>
   </div>
   </ThemeContext.Provider>
+  </UserContextProvider>
+  )
 };
 
 export default App;

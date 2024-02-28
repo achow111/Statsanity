@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   // States for registration
+  // eslint-disable-next-line
   const [name, setName] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -35,7 +36,7 @@ const Signup = () => {
       toast.error(data.error)
       } else {
         setData({})
-        toast.success('Login Successful. Welcome!')
+        toast.success('Yipee! Signup completed')
         navigate('/Login')
       }
     } catch (error) {

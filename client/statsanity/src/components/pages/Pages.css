@@ -107,9 +107,28 @@
   font-weight: 450;
 }
 
+.SubHeader {
+  font-size: 2rem;
+  margin-bottom: 0.3rem; /* 15px */
+  font-weight: 300;
+}
+
 .HeaderParagraph {
   display: flex;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.SubHeaderParagraph {
+  display: inline;
   font-size: 1rem;
+  font-weight: 300;
+}
+
+.sub-container {
+  margin-right: 10%;
+  margin-bottom: 1.3rem; /* 15px */
+
 }
 
 .HomeButtons {
@@ -422,9 +441,11 @@
   position: relative;
   width: 50rem;
   margin-right: 20%;
-  margin-top: -2rem;
+  margin-top: 1.5rem;
   background: var(--button-background);
   border-radius: 0.7rem;
+  margin-bottom: 3.5rem;
+
 }
 
 .stats-input,
@@ -435,8 +456,17 @@
   font-size: 1.3rem;
 }
 
-.stats-table{
-  margin-top: -50rem;
+.stat-image{
+  margin-right: 10rem;
+}
+
+.stat-image-container {
+  display: flex;
+  justify-content: center; /* Align images horizontally at the center */
+  align-items: center; /* Align images vertically at the center */
+  margin: 0 auto; /* Center the container horizontally */
+  max-width: 90%; /* Adjust the maximum width as needed */
+  margin-top: 4rem; /* Add margin space from the top */
 }
 
 .player-table {

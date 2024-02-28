@@ -12,18 +12,12 @@ nav {
     font-weight: 500;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
     top: 0;
     z-index: 10;
     margin-left: 7rem;
     margin-top: 4rem;
 }
 
-.nav.sticky {
-    backdrop-filter: blur(10px); /* Add a blur effect */
-    background-color: rgba(255, 255, 255, 0.5); /* Adjust the background color with transparency */
-    transition: background-color 0.3s ease; /* Add transition for smooth effect */
- }
 
 nav .title {
     display: flex;
@@ -59,6 +53,10 @@ nav ul {
     display: flex;
     align-items: center;
 }
+
+nav ul.profile-logout {
+    max-width: 21.45rem;
+  }
 
 nav ul li {
     list-style: none;
@@ -149,6 +147,48 @@ nav .menu:hover span{
 .nav-link {
     display: inline-block;
 }
+
+.nav-button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none; /* Remove button border */
+    padding: 0; /* Remove button padding */
+    margin-top: 0.3rem;    
+  }
+  
+  .nav-button:hover img {
+    filter: brightness(2); /* Make logout image blue on hover */
+  }
+
+  .nav-logo{
+    height: 20px;
+
+  }
+  
+  .nav-button:hover .logout-text {
+    display: inline-block; /* Show logout text on hover */
+  }
+  
+  .logout-text {
+    display: none; /* Hide logout text by default */
+    color: blue; /* Set logout text color */
+  }
+  
+  .logout-text::before {
+    content: "Logout";
+    position: absolute;
+    transform: translateX(-50%);
+    background-color: black; /* Background color for logout text */
+    color: white; /* Text color for logout text */
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    opacity: 0; /* Initially hide logout text */
+    transition: opacity 0.3s ease;
+  }
+  
+  .nav-button:hover .logout-text::before {
+    opacity: 1; /* Show logout text on hover */
+  }
 
 @keyframes fade-in {
     from {
